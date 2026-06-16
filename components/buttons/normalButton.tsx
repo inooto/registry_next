@@ -14,7 +14,7 @@ const NormalButton = (props: NormalButton) => {
 
   return (
     <button
-      className={`w-50 py-3 text-md font-bold align-center border-2 rounded-md ${Colors}`}
+      className={`w-80 py-3 text-md font-bold border-2 rounded-md ${Colors}`}
     >
       {text}
     </button>

@@ -6,6 +6,7 @@ import Counter from "@/components/counter";
 import ItemListCard from "@/components/cards/itemListCard";
 import ItemCartCard from "@/components/cards/itemCartCard";
 import NormalButton from "@/components/buttons/normalButton";
+import Modal from "@/components/modal";
 
 const devItem = {
   id: 1,
@@ -32,6 +33,9 @@ export default function Home() {
         onIncrement={() => count < 20 && setCount(count + 1)}
         onDecrement={() => count > 0 && setCount(count - 1)}
       />
+
+      <br />
+
       <ItemListCard
         id={devItem["id"]}
         src={devItem["src"]}
@@ -48,6 +52,9 @@ export default function Home() {
         price={devItem["price"]}
         showDetail={showItemDetail}
       />
+
+      <br />
+
       <ItemCartCard
         id={devItem["id"]}
         src={devItem["src"]}
@@ -56,8 +63,22 @@ export default function Home() {
         price={devItem["price"]}
         amount={2}
       />
-      <NormalButton text="削除しない" color="white" />
-      <NormalButton text="削除する" color="yellow" />
+
+      <br />
+
+      <Modal>
+        <p>カートに追加しました</p>
+      </Modal>
+
+      <br />
+
+      <Modal>
+        <p>商品を削除しますか？</p>
+        <div className="flex flex-col gap-2">
+          <NormalButton text="削除する" color="yellow" />
+          <NormalButton text="削除しない" color="white" />
+        </div>
+      </Modal>
     </div>
   );
 }
