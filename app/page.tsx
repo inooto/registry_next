@@ -1,10 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Counter from "@/components/counter";
 import ItemListCard from "@/components/cards/itemListCard";
 import ItemCartCard from "@/components/cards/itemCartCard";
-import { useState } from "react";
+import NormalButton from "@/components/buttons/normalButton";
 
 const devItem = {
   id: 1,
@@ -55,6 +56,8 @@ export default function Home() {
         price={devItem["price"]}
         amount={2}
       />
+      <NormalButton text="削除しない" color="white" />
+      <NormalButton text="削除する" color="yellow" />
     </div>
   );
 }
