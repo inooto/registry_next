@@ -7,6 +7,7 @@ import ItemListCard from "@/components/cards/itemListCard";
 import ItemCartCard from "@/components/cards/itemCartCard";
 import NormalButton from "@/components/buttons/normalButton";
 import Modal from "@/components/modal";
+import SquareIconButton from "@/components/buttons/squareIconButton";
 
 const devItem = {
   id: 1,
@@ -79,6 +80,12 @@ export default function Home() {
           <NormalButton text="削除しない" color="white" />
         </div>
       </Modal>
+
+      <br />
+
+      <SquareIconButton icon="back" />
+      <br />
+      <SquareIconButton icon="cart" />
     </div>
   );
 }
