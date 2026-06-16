@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Counter from "@/components/counter";
 import ItemListCard from "@/components/cards/itemListCard";
+import ItemCartCard from "@/components/cards/itemCartCard";
+import { useState } from "react";
 
 const devItem = {
   id: 1,
@@ -19,9 +21,16 @@ const showItemDetail = (id: number) => {
 };
 
 export default function Home() {
+  const [count, setCount] = useState<number>(0);
+
   return (
-    <div className="bg-red-400">
-      <Counter />
+    <div className="bg-red-400 p-10">
+      <Counter
+        count={count}
+        maxNum={20}
+        onIncrement={() => count < 20 && setCount(count + 1)}
+        onDecrement={() => count > 0 && setCount(count - 1)}
+      />
       <ItemListCard
         id={devItem["id"]}
         src={devItem["src"]}
@@ -37,6 +46,14 @@ export default function Home() {
         name={devItem["name"]}
         price={devItem["price"]}
         showDetail={showItemDetail}
+      />
+      <ItemCartCard
+        id={devItem["id"]}
+        src={devItem["src"]}
+        alt={devItem["alt"]}
+        name={devItem["name"]}
+        price={devItem["price"]}
+        amount={2}
       />
     </div>
   );
