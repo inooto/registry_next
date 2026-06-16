@@ -20,9 +20,9 @@ const ItemListCard = (props: ItemListCardProps) => {
       onClick={() => showDetail(id)}
     >
       <Image src={src} alt={alt} width={150} height={150} loading="lazy" />
-      <p>{name}</p>
+      <p className="text-xl font-bold">{name}</p>
       <p className="w-full text-right">
-        ¥<span className="text-2xl font-bold">{price}</span>
+        ¥<span className="text-3xl font-bold">{price}</span>
       </p>
     </div>
   );
