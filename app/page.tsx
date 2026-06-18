@@ -76,16 +76,28 @@ export default function Home() {
       <Modal>
         <p>商品を削除しますか？</p>
         <div className="flex flex-col gap-2">
-          <NormalButton text="削除する" color="yellow" />
-          <NormalButton text="削除しない" color="white" />
+          <NormalButton
+            text="削除する"
+            color="yellow"
+            onClick={() => console.log("削除")}
+          />
+          <NormalButton
+            text="削除しない"
+            color="white"
+            onClick={() => console.log("No削除")}
+          />
         </div>
       </Modal>
 
       <br />
 
-      <SquareIconButton icon="back" />
+      <SquareIconButton icon="back" onClick={() => console.log("back")} />
       <br />
-      <SquareIconButton icon="cart" />
+      <br />
+      <SquareIconButton icon="cart" onClick={() => console.log("cart")} />
+
+      <br />
+      <br />
     </div>
   );
 }

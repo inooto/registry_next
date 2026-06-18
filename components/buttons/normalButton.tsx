@@ -1,10 +1,11 @@
 type NormalButton = {
   text: string;
   color: "white" | "yellow";
+  onClick: () => void;
 };
 
 const NormalButton = (props: NormalButton) => {
-  const { text, color } = props;
+  const { text, color, onClick } = props;
   const Colors =
     color === "white"
       ? "bg-white border-slate-500"
@@ -14,7 +15,8 @@ const NormalButton = (props: NormalButton) => {
 
   return (
     <button
-      className={`w-80 py-3 text-md font-bold border-2 rounded-md ${Colors}`}
+      onClick={onClick}
+      className={`w-80 py-3 text-md font-bold border-2 rounded-md cursor-pointer ${Colors}`}
     >
       {text}
     </button>
